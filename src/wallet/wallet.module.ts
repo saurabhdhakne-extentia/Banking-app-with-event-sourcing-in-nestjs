@@ -6,7 +6,7 @@ import { typeormDbConnection } from '../typeorm-db.connection';
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { AddWalletHandler } from './commands/handler/add-wallet.handler';
 import { WalletRepositoryToken } from './wallet-repository.token';
-import { TypeormWalletRepository } from './typeorm-wallet.repository';
+import { TypeormWalletRepository } from './repository/typeorm-wallet.repository';
 
 const command = [AddWalletHandler];
 
@@ -21,10 +21,6 @@ const command = [AddWalletHandler];
       provide: WalletRepositoryToken,
       useClass: TypeormWalletRepository
     },
-    // {
-    //   provide: CurrencyConversionToken,
-    //   useClass: XratesCurrencyConversionService
-    // },
     ...command
   ]
 })

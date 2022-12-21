@@ -1,4 +1,4 @@
-import { Currency } from "../../currency";
+import { Currency } from "../../currency.constant";
 
 export class WalletAddedEvent {
     constructor(

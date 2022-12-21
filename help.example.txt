@@ -27,7 +27,9 @@ nest g cl typeorm-db.connection --no-spec
 
 nest g cl wallet/wallet-repository.token --no-spec
 
-nest g cl wallet/wallet.repository --no-spec
+nest g cl wallet/repository/wallet.repository --no-spec
+
+nest g cl wallet/repository/typeorm-wallet.repository --no-spec
 
 nest g cl wallet/events/wallet-added.event --no-spec^C    
 

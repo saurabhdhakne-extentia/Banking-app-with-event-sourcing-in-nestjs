@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryColumn } from "typeorm";
-import { Currency } from "../../currency";
+import { Currency } from "../../currency.constant";
 
 @Entity()
 export class Wallet {

@@ -2,7 +2,7 @@ import { AddWalletCommand } from "../impl/add-wallet.command";
 import { CommandHandler, EventBus } from "@nestjs/cqrs";
 import { Inject } from "@nestjs/common";
 import { WalletRepositoryToken } from "./../../wallet-repository.token";
-import { WalletRepository } from "./../../wallet.repository";
+import { WalletRepository } from "../../repository/wallet.repository";
 import * as uuid from 'uuid';
 import { Wallet } from "../../entities/wallet";
 import { WalletAddedEvent } from "../../events/wallet-added.event";

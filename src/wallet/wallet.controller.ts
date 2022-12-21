@@ -7,7 +7,6 @@ import { CreateWalletOutput } from './create-wallet.output';
 import { validate as uuidValidate } from 'uuid';
 import { AddWalletCommand } from './commands/impl/add-wallet.command';
 
-
 @Controller('wallet')
 export class WalletController {
 
@@ -28,6 +27,5 @@ export class WalletController {
         const id = await this.commandBus.execute(new AddWalletCommand(payload.balance, payload.currency, companyId));
         return { id };
     }
-
 
 }
