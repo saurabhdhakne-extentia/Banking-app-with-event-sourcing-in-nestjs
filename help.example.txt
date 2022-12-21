@@ -31,13 +31,28 @@ nest g cl wallet/repository/wallet.repository --no-spec
 
 nest g cl wallet/repository/typeorm-wallet.repository --no-spec
 
-nest g cl wallet/events/wallet-added.event --no-spec^C    
-
-nest g cl wallet/events/wallet-added.event --no-spec
+nest g cl wallet/events/wallet-added.event --no-spec 
 
 nest g cl wallet/dtos/wallet.dto --no-spec
 
-nest g cl wallet/queries/impl/get-wallets.query --no-spec
+nest g cl wallet/queries/impl/get-wallet.query --no-spec
 
-nest g cl wallet/queries/handlers/get-wallets.handler --no-spec
+nest g cl wallet/queries/handlers/get-wallet.handler --no-spec
 
+nest g cl wallet/transfer-funds.input --no-spec
+
+nest g cl wallet/commands/impl/transfer-funds.command --no-spec
+
+nest g cl wallet/commands/handler/transfer-funds.handler --no-spec
+
+nest g cl wallet/exceptions/wallet-id-does-not-exist.exception --no-spec
+
+nest g cl wallet/exceptions/transfers-cannot-be-across-companies.exception --no-spec 
+
+nest g cl wallet/exceptions/could-not-convert-currencies.exception --no-spec
+
+nest g cl wallet/exceptions/wallet-does-not-belong-to-company.exception --no-spec  
+
+nest g cl wallet/exceptions/insufficient-funds-in-wallet.exception --no-spec
+
+nest g cl wallet/events/funds-transfered.event --no-spec  
