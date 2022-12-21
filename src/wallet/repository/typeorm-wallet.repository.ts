@@ -4,6 +4,7 @@ import { Wallet } from "../entities/wallet";
 import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { typeormDbConnection } from "../../typeorm-db.connection";
+import { Currency } from "../../currency.constant";
 
 @Injectable()
 export class TypeormWalletRepository implements WalletRepository {
@@ -22,6 +23,26 @@ export class TypeormWalletRepository implements WalletRepository {
         return this.repository.find({
             where: {
                 companyId: companyId
+            }
+        });
+    }
+
+    findById(walletId: string): Promise<Wallet | undefined> {
+        return this.repository.findOne({
+            where: {
+                id: walletId
+            }
+        });
+    }
+
+    findByIds(ids: string[]): Promise<Wallet[] | undefined> {
+        return this.repository.findByIds(ids);
+    }
+
+    findCommissionWallet(currency: Currency): Promise<Wallet | undefined> {
+        return this.repository.findOne({
+            where: {
+                currency: currency, master: true
             }
         });
     }
