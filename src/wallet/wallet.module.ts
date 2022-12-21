@@ -7,9 +7,10 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AddWalletHandler } from './commands/handler/add-wallet.handler';
 import { WalletRepositoryToken } from './wallet-repository.token';
 import { TypeormWalletRepository } from './repository/typeorm-wallet.repository';
+import { GetWalletHandler } from './queries/handlers/get-wallet.handler';
 
 const command = [AddWalletHandler];
-
+const queries = [GetWalletHandler]
 @Module({
   imports: [
     CqrsModule,
@@ -21,7 +22,8 @@ const command = [AddWalletHandler];
       provide: WalletRepositoryToken,
       useClass: TypeormWalletRepository
     },
-    ...command
+    ...command,
+    ...queries
   ]
 })
 export class WalletModule { }

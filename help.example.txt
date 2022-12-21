@@ -34,3 +34,10 @@ nest g cl wallet/repository/typeorm-wallet.repository --no-spec
 nest g cl wallet/events/wallet-added.event --no-spec^C    
 
 nest g cl wallet/events/wallet-added.event --no-spec
+
+nest g cl wallet/dtos/wallet.dto --no-spec
+
+nest g cl wallet/queries/impl/get-wallets.query --no-spec
+
+nest g cl wallet/queries/handlers/get-wallets.handler --no-spec
+

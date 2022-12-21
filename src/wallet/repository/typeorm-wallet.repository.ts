@@ -18,4 +18,12 @@ export class TypeormWalletRepository implements WalletRepository {
         return;
     }
 
+    findByCompanyId(companyId: string): Promise<Wallet[]> {
+        return this.repository.find({
+            where: {
+                companyId: companyId
+            }
+        });
+    }
+
 }
