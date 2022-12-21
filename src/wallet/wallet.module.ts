@@ -8,8 +8,9 @@ import { AddWalletHandler } from './commands/handler/add-wallet.handler';
 import { WalletRepositoryToken } from './wallet-repository.token';
 import { TypeormWalletRepository } from './repository/typeorm-wallet.repository';
 import { GetWalletHandler } from './queries/handlers/get-wallet.handler';
+import { TransferFundsHandler } from './commands/handler/transfer-funds.handler';
 
-const command = [AddWalletHandler];
+const command = [AddWalletHandler, TransferFundsHandler];
 const queries = [GetWalletHandler]
 @Module({
   imports: [
