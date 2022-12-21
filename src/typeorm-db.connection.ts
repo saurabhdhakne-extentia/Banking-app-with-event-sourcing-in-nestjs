@@ -1,0 +1,1 @@
+export const typeormDbConnection = 'DatabaseV1';

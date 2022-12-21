@@ -1,0 +1,34 @@
+npm install --save @nestjs/typeorm
+npm install --save typeorm
+npm i --save @nestjs/cqrs
+npm install --save pg
+npm i --save class-validator class-transformer
+npm install uuid
+
+
+
+nest g module wallet
+
+nest g controller wallet
+
+nest g cl wallet/commands/impl/add-wallet.command --no-spec 
+
+nest g cl wallet/commands/handler/add-wallet.handler --no-spec  
+
+nest g cl wallet/create-wallet.input --no-spec
+
+nest g cl currency --no-spec
+
+nest g cl wallet/entities/wallet --no-spec
+
+nest g cl wallet/create-wallet.output --no-spec
+
+nest g cl typeorm-db.connection --no-spec
+
+nest g cl wallet/wallet-repository.token --no-spec
+
+nest g cl wallet/wallet.repository --no-spec
+
+nest g cl wallet/events/wallet-added.event --no-spec^C    
+
+nest g cl wallet/events/wallet-added.event --no-spec
