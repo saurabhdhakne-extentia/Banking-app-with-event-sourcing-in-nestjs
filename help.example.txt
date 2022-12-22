@@ -15,13 +15,13 @@ nest g cl wallet/commands/impl/add-wallet.command --no-spec
 
 nest g cl wallet/commands/handler/add-wallet.handler --no-spec  
 
-nest g cl wallet/create-wallet.input --no-spec
-
 nest g cl currency --no-spec
 
 nest g cl wallet/entities/wallet --no-spec
 
-nest g cl wallet/create-wallet.output --no-spec
+nest g cl wallet/dtos/create-wallet-input.dto --no-spec
+
+nest g cl wallet/dtos/create-wallet-output.dto --no-spec
 
 nest g cl typeorm-db.connection --no-spec
 
