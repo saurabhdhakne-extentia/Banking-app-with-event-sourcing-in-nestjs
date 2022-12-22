@@ -2,8 +2,8 @@ import { Request } from 'express';
 import { Controller, HttpException, HttpStatus } from '@nestjs/common';
 import { CommandBus, QueryBus } from "@nestjs/cqrs";
 import { Post, Get, Body, Req, Param } from "@nestjs/common";
-import { CreateWalletInput } from './create-wallet.input';
-import { CreateWalletOutput } from './create-wallet.output';
+import { CreateWalletInputDto } from './dtos/create-wallet-input.dto';
+import { CreateWalletOutputDto } from './dtos/create-wallet-output.dto';
 import { validate as uuidValidate } from 'uuid';
 import { AddWalletCommand } from './commands/impl/add-wallet.command';
 import { WalletDto } from './dtos/wallet.dto';
@@ -21,9 +21,9 @@ export class WalletController {
 
     @Post()
     async createWallet(
-        @Body() payload: CreateWalletInput,
+        @Body() payload: CreateWalletInputDto,
         @Req() request: Request
-    ): Promise<CreateWalletOutput> {
+    ): Promise<CreateWalletOutputDto> {
         const companyId = request.header('X-Company-Id');
         if (!uuidValidate(companyId)) {
             throw new HttpException('Company Id must be a valid uuid', HttpStatus.BAD_REQUEST);
