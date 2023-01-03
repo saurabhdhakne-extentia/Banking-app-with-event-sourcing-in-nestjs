@@ -4,7 +4,7 @@ npm i --save @nestjs/cqrs
 npm install --save pg
 npm i --save class-validator class-transformer
 npm install uuid
-
+npm i creditcard-generatoraz
 
 
 nest g module wallet
@@ -56,3 +56,67 @@ nest g cl wallet/exceptions/wallet-does-not-belong-to-company.exception --no-spe
 nest g cl wallet/exceptions/insufficient-funds-in-wallet.exception --no-spec
 
 nest g cl wallet/events/funds-transfered.event --no-spec  
+
+
+
+nest g module card
+
+nest g controller card --no-spec
+
+nest g cl card/dtos/create-card-input.dto --no-spec
+
+nest g cl card/dtos/create-card-output.dto --no-spec
+
+nest g cl card/commands/impl/add-card.command --no-spec  
+
+nest g cl card/commands/handler/add-card.handler --no-spec
+
+nest g cl card/card-repository.token --no-spec    
+
+nest g cl card/repository/card.repository --no-spec
+
+nest g cl card/card-generator.token --no-spec
+
+nest g cl card/entities/card --no-spec 
+
+nest g cl card/repository/typeorm-card.repository --no-spec 
+
+nest g cl card/random-card.generator --no-spec
+
+nest g cl card/card.vo --no-spec
+
+nest g cl card/card.generator --no-spec  
+
+nest g cl card/events/card-added.event --no-spec  
+
+nest g cl card/dtos/card.dto --no-spec
+
+nest g cl card/queries/impl/get-card.query --no-spec
+
+nest g cl card/queries/handlers/get-card.handler --no-spec
+
+nest g cl card/commands/impl/block-card.command --no-spec
+
+nest g cl card/commands/handler/block-card.handler --no-spec
+
+nest g cl card/events/card-blocked.event --no-spec
+
+nest g cl card/commands/impl/unblock-card.command --no-spec
+
+nest g cl card/commands/handler/unblock-card.handler --no-spec
+
+nest g cl card/events/card-unblocked.event --no-spec
+
+nest g cl card/commands/impl/load-money.command --no-spec
+
+nest g cl card/commands/handler/load-money.handler --no-spec
+
+nest g cl card/events/money-loaded.event --no-spec
+
+nest g cl card/commands/impl/unload-money.command --no-spec
+
+nest g cl card/commands/handler/unload-money.handler --no-spec
+
+nest g cl card/events/money-unloaded.event --no-spec
+
+nest g cl card/dtos/load-money.dto --no-spec
