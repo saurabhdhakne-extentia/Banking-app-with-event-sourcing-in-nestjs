@@ -12,6 +12,7 @@ import { TransferFundsHandler } from './commands/handler/transfer-funds.handler'
 
 const command = [AddWalletHandler, TransferFundsHandler];
 const queries = [GetWalletHandler]
+
 @Module({
   imports: [
     CqrsModule,
@@ -25,6 +26,7 @@ const queries = [GetWalletHandler]
     },
     ...command,
     ...queries
-  ]
+  ],
+  exports: [WalletRepositoryToken]
 })
 export class WalletModule { }
