@@ -7,6 +7,8 @@ import { Wallet } from './wallet/entities/wallet';
 import { typeormDbConnection } from './typeorm-db.connection';
 import { CardModule } from './card/card.module';
 import { Card } from './card/entities/card';
+import { TransferModule } from './transfer/transfer.module';
+import { Transfer } from './transfer/entities/transfer.entity';
 
 @Module({
   imports: [
@@ -18,11 +20,12 @@ import { Card } from './card/entities/card';
       username: 'postgres',
       password: 'toor',
       database: 'BANK404',
-      entities: [Wallet, Card],
+      entities: [Wallet, Card, Transfer],
       synchronize: true,
     }),
     WalletModule,
-    CardModule
+    CardModule,
+    TransferModule
   ],
   controllers: [AppController],
   providers: [AppService],
